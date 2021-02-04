@@ -2,7 +2,6 @@
 server:
   port: 8006
 
-
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -15,7 +14,17 @@ spring:
       prefix: /templates/
       suffix: .html
     static-path-pattern: /**
+    #热部署插件
+  devtools:
+    restart:
+        #需要实时更新的目录
+      additional-paths: resources/**,static/**,templates/**
+  thymeleaf:
+    cache: false
 #mysql
 mybatis:
   mapper-locations: classpath:Mapper/*.xml  #配置映射文件
   type-aliases-package: com.ssm.demo.bean #配置实体类
+  configuration:
+    use-generated-keys: false
+

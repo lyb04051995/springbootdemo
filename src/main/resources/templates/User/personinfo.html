@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>个人账号注册</title>
+  <link rel="stylesheet" href="/layout/base.css">
+  <link rel="stylesheet" href="/layout/main.css">
+</head>
+
+<body>
+  <div class="header">
+    <ul class="mid-layout h row">
+      <li class="col v-m">
+        <a href="/login" class="icon-link">
+          <img src="img/icon1.png" alt="">
+          <span>登录</span>
+        </a>
+        <a href="/User/personinfo" class="icon-link">
+          <img src="img/icon2.png" alt="">
+          <span>个认账号注册</span>
+        </a>
+        <a href="#" class="icon-link">
+          <img src="img/icon3.png" alt="">
+          <span>预留注册</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="mid">
+      <ul class="row w">
+        <li class="col">
+          <div class="router">
+            <span>当前位置：</span>
+            <a href="#">首页</a>
+            <a href="#">志愿项目</a>
+            <span>志愿者注册</span>
+          </div>
+        </li>
+      </ul>
+      <ul class="row w">
+        <li class="col v-t w">
+          <div class="tabbar">
+            <a href="/User/personinfo" class="active">个人账号注册</a>
+            <a href="志愿团体注册.html">志愿团体注册</a>
+          </div>
+          <h2 class="subtitle subtitle-margin subtitle-noline">账号信息</h2>
+          <ul class="grid">
+            <li class="grid-item g-16">
+              <ul class="grid">
+                <li class="grid-item g-12">
+                  <div class="form">
+                    <p class="form-label"><em>*</em>账号</p>
+                    <input name="account" type="text">
+                  </div>
+                </li>
+                <li class="grid-item g-12">
+                  <div class="form">
+                    <p class="form-label"><em>*</em>用户名</p>
+                    <input name="name"  type="text">
+                  </div>
+                </li>
+                <li class="grid-item g-12">
+                  <div class="form">
+                    <p class="form-label"><em>*</em>密码</p>
+                    <input name="password"  type="text">
+                  </div>
+                </li>
+                <li class="grid-item g-12">
+                  <div class="form">
+                    <p class="form-label"><em>*</em>电子邮箱</p>
+                    <input name="email" type="text">
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div class="vote">
+            <p>我是北京志愿者，为使我们的国家和城市更美好、人民更幸福、环境更安全，我要团结身边的人，投身其间。面对需求，我要行动。<br>我承诺，我将竭尽所能，参加公益活动，帮助困难人群，真诚关怀有需要的人士，为他们带来温暖。</p>
+            <a href="#" class="button"><button type="submit" onclick="fromPost('register')">注册</button></a>
+          </div>
+          <div class="agreement">
+            <p>本网站及与本网站链接的网站，仅提供志愿者、志愿服务团体、志愿服务机构及其它与此相关联之志愿服务项目。志愿者、志愿服务团体、志愿服务机构以及因 其它任何目的进入本网站的访问者接受本协议书条款，注册成为中国志愿服务网网站会员，并遵守本协议所述之条款使用本网站所提供之服务。如果您不接受本声明之条 款，请勿使用本网站。接受本声明之条款，您将遵守本协议之规定。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="mid">
+      <div class="row w">
+        <div class="col v-m g-18">
+          <div class="footer-link">友情链接：<a href="#">中国文明网</a>、<a href="#">民政部</a>、<a href="#">中国社会组织</a>、<a
+              href="#">中国社会工作网</a>、<a href="#">中国志愿服务联合会</a>、<a href="#">中国旅游志愿者</a>、<a href="#">中国青年志愿者</a>、<a
+              href="#">中国文艺志愿者</a></div>
+          <div class="row w">
+            <p class="col v-m t-l g-16">ICP备案编号：京ICP备13012430号-7<br>版权所有：中华人民共和国民政部 技术支持：中国志愿服务联合会 志愿云</p>
+            <div class="col v-m t-r footer-num">
+              <div class="t-l">
+                <p>浏览网站人数统计</p>
+                <div><span>0</span><span>5</span><span>5</span><span>0</span><span>0</span><span>0</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  function fromPost(register) {
+    var temp = document.createElement("form");
+    temp.action = register;
+    temp.method = "post";
+    temp.style.display = "none";
+    var input = document.getElementsByTagName("input").length;
+    for (var i =0;i<input;i++) {
+      var opt = document.createElement("textarea");
+      opt.name = document.getElementsByTagName("input")[i].name;
+      opt.value =document.getElementsByTagName("input")[i].value;
+      temp.appendChild(opt);
+    }
+    document.body.appendChild(temp);
+    temp.submit();
+    return temp;
+  }
+
+</script>
+
+</html>

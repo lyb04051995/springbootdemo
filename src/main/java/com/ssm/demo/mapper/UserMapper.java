@@ -6,5 +6,12 @@ import org.springframework.stereotype.Component;
 @Component
 public interface UserMapper {
 
-    UserBean getInfo(String name, String password);
+    //根据账号和密码验证是否存在
+    UserBean getInfo(String account, String password);
+
+    //根据账号判段该账号是否存在
+    UserBean getInfobyaccount(String account);
+
+    //注册
+    int insertUser(String name,String account,String password,String email);
 }

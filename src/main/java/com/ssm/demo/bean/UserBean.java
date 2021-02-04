@@ -10,9 +10,8 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class UserBean {
-    private String id;
     private String name;
-    private int age;
+    private String email;
     private String password;
     private String account;
 }

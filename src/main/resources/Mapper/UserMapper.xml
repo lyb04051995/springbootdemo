@@ -3,8 +3,19 @@
 <!--对应接口所在的包名-->
 <mapper namespace="com.ssm.demo.mapper.UserMapper">
 
+    <!--登录账号验证-->
     <select id="getInfo" parameterType="String" resultType="com.ssm.demo.bean.UserBean">
-select *  from table_name where name=#{name} and password = #{password}
+        select *  from UserInfo where account=#{account} and password = #{password}
+    </select>
+
+    <!--注册-->
+    <insert id="insertUser" parameterType="com.ssm.demo.bean.UserBean"  >
+        insert into UserInfo( name, account, password, email) VALUES (#{name},#{account},#{password},#{email});
+    </insert>
+
+    <!--验证改账号是否存在-->
+    <select id="getInfobyaccount" parameterType="String" resultType="com.ssm.demo.bean.UserBean">
+        select  id  from   userinfo  where account=#{account}
     </select>
 
 </mapper>

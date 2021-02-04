@@ -19,13 +19,27 @@ public class LoginController {
     }
 
     @RequestMapping(value ="/loginIn",method = RequestMethod.POST)
-    public  String login( String name,  String password)
+    public  String login( String account,  String password)
     {
-        UserBean userBean = userService.loginIn(name,password);
+        UserBean userBean = userService.loginIn(account,password);
         if(userBean!=null){
             return "menu";
         }else {
             return "error";
         }
     }
+
+    @RequestMapping("/User/personinfo")
+    public String personinfo()
+    {
+        return "User/personinfo";
+    }
+
+    @RequestMapping("/User/register")
+    public String UserRegister(UserBean userBean)
+    {
+        userService.insertUser(userBean.getName(), userBean.getAccount(), userBean.getPassword(), userBean.getEmail());
+        return "success";
+    }
+
 }
