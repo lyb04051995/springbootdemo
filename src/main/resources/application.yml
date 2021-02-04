@@ -1,0 +1,14 @@
+#tomcat
+server:
+  port: 8006
+
+#mysql
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123
+mybatis:
+  mapper-locations: classpath:Mapper/*.xml  #配置映射文件
+  type-aliases-package: com.ssm.demo.bean #配置实体类
