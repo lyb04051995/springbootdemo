@@ -18,12 +18,12 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping(value ="/login/info",method = RequestMethod.POST)
+    @RequestMapping(value ="/loginIn",method = RequestMethod.POST)
     public  String login( String name,  String password)
     {
         UserBean userBean = userService.loginIn(name,password);
         if(userBean!=null){
-            return "success";
+            return "menu";
         }else {
             return "error";
         }
